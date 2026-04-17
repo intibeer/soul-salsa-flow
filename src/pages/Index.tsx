@@ -90,10 +90,7 @@ const Home = () => (
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-8">
-        <p className="font-script text-4xl md:text-6xl text-primary-foreground/95 mb-4 animate-fade-in-up leading-none">
-          this is how your life changes
-        </p>
-        <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] text-primary-foreground leading-[1.02] tracking-tight mb-8 animate-fade-in-up animate-delay-100 uppercase">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] text-primary-foreground leading-[1.02] tracking-tight mb-8 animate-fade-in-up uppercase">
           Find your confidence.
           <br />
           <span className="normal-case italic font-normal font-serif-elegant">Feel alive</span> in your body.
