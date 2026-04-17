@@ -1,75 +1,40 @@
-import { useEffect, useState } from "react";
-import { X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const STORAGE_KEY = "promo-ribbon:bachata-v1";
-const RIBBON_HEIGHT = 44; // px, single-line desktop. Tailwind ignores this but we use it for --ribbon-h.
-
-const PromoRibbon = () => {
-  const [dismissed, setDismissed] = useState(false);
-
-  useEffect(() => {
-    try {
-      if (localStorage.getItem(STORAGE_KEY) === "1") setDismissed(true);
-    } catch {
-      // ignore — localStorage may be unavailable
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.style.setProperty(
-      "--ribbon-h",
-      dismissed ? "0px" : `${RIBBON_HEIGHT}px`
-    );
-  }, [dismissed]);
-
-  const dismiss = () => {
-    setDismissed(true);
-    try {
-      localStorage.setItem(STORAGE_KEY, "1");
-    } catch {
-      // ignore
-    }
-  };
-
-  if (dismissed) return null;
-
-  return (
+/**
+ * Inline promotional ribbon that sits below the homepage hero.
+ * Non-dismissible by design — promotes the weekly Bachata residency.
+ */
+const PromoRibbon = () => (
+  <div className="relative bg-orange-700 text-primary-foreground bg-grain overflow-hidden">
     <div
-      className="fixed top-0 left-0 right-0 z-[60] bg-orange-700 text-primary-foreground"
-      style={{ height: RIBBON_HEIGHT }}
-    >
-      <div className="relative h-full container mx-auto px-4 sm:px-6 flex items-center justify-center gap-3 text-center">
-        <span className="hidden sm:inline font-handwritten text-2xl leading-none text-primary-foreground/90">
+      className="absolute inset-0 opacity-30 pointer-events-none"
+      aria-hidden="true"
+      style={{
+        backgroundImage:
+          "radial-gradient(ellipse at 20% 50%, hsl(40 100% 75% / 0.5), transparent 55%), radial-gradient(ellipse at 80% 50%, hsl(15 95% 40% / 0.45), transparent 55%)",
+      }}
+    />
+    <div className="relative container mx-auto px-6 py-5 sm:py-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-center sm:text-left">
+      <div className="flex items-baseline gap-2 sm:gap-3">
+        <span className="font-handwritten text-3xl sm:text-4xl leading-none text-primary-foreground/90">
           new
         </span>
-        <p className="font-body text-[0.78rem] sm:text-sm leading-snug">
-          <span className="font-bold tracking-wide uppercase mr-2">
-            Bachata on Tuesdays
-          </span>
-          <span className="text-primary-foreground/85 hidden sm:inline">
-            at The Greenhouse, Hove · 7–10 PM · from 14 April
-          </span>
-          <span className="text-primary-foreground/85 sm:hidden">
-            · The Greenhouse, Hove · from 14 April
-          </span>
-        </p>
-        <Link
-          to="/events"
-          className="hidden md:inline-flex items-center gap-1 font-body text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-primary-foreground border border-primary-foreground/50 hover:bg-primary-foreground hover:text-primary px-3 py-1 rounded-full transition-colors"
-        >
-          Details →
-        </Link>
-        <button
-          onClick={dismiss}
-          aria-label="Dismiss announcement"
-          className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-        >
-          <X size={16} />
-        </button>
+        <span className="font-statement text-xl sm:text-2xl uppercase tracking-wide">
+          Bachata on Tuesdays
+        </span>
       </div>
+      <span className="hidden sm:inline w-px h-8 bg-primary-foreground/30" />
+      <p className="font-body text-sm sm:text-[0.95rem] text-primary-foreground/90">
+        The Greenhouse, Hove · 7–10 PM · from 14 April
+      </p>
+      <Link
+        to="/events"
+        className="inline-flex items-center gap-2 font-body text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-primary bg-primary-foreground hover:bg-warm-white hover:-translate-y-0.5 shadow-warm px-5 py-2.5 rounded-full transition-all"
+      >
+        Details →
+      </Link>
     </div>
-  );
-};
+  </div>
+);
 
 export default PromoRibbon;

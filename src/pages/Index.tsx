@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import InstagramFeed from "@/components/InstagramFeed";
+import EventModal from "@/components/EventModal";
+import PromoRibbon from "@/components/PromoRibbon";
 import heroImage from "@/assets/hero-dance.jpg";
 import connectionImage from "@/assets/connection.jpg";
+import { events as allEvents, AppEvent } from "@/data/events";
 
 const testimonials = [
   {
@@ -47,13 +51,12 @@ const pillars = [
   },
 ];
 
-const upcomingEvents = [
-  { title: "Salsa & Flirt Social", date: "Sat 26 April", location: "Brighton", type: "Social" },
-  { title: "Embodied Confidence Workshop", date: "Sat 10 May", location: "Hove Studio", type: "Workshop" },
-  { title: "Summer Salsa on the Seafront", date: "Sun 15 June", location: "Brighton Beach", type: "Event" },
-];
+const upcomingEvents = allEvents.filter((e) => e.id !== "salsa-flirt-valentines").slice(0, 3);
 
-const Home = () => (
+const Home = () => {
+  const [activeEvent, setActiveEvent] = useState<AppEvent | null>(null);
+
+  return (
   <Layout>
     {/* SEO */}
     <title>Salsa & Flow — Salsa, Mindfulness & Somatic Coaching in Brighton</title>
@@ -110,6 +113,9 @@ const Home = () => (
       </div>
 
     </section>
+
+    {/* Promo ribbon — sits directly below the hero */}
+    <PromoRibbon />
 
     {/* Three Pillars */}
     <section className="relative py-28 px-6">
@@ -215,10 +221,12 @@ const Home = () => (
           subtitle="Join us for something special."
         />
         <div className="space-y-4">
-          {upcomingEvents.map((event, i) => (
-            <div
-              key={i}
-              className="group bg-card border border-border/60 rounded-2xl p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-warm hover:shadow-warm-lg hover:border-primary/40 transition-all duration-300"
+          {upcomingEvents.map((event) => (
+            <button
+              key={event.id}
+              type="button"
+              onClick={() => setActiveEvent(event)}
+              className="group w-full text-left bg-card border border-border/60 rounded-2xl p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-warm hover:shadow-warm-lg hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300"
             >
               <div>
                 <span className="inline-block font-body text-[0.65rem] font-bold tracking-[0.22em] uppercase text-primary bg-warm-peach px-3 py-1 rounded-full">
@@ -231,10 +239,10 @@ const Home = () => (
                   {event.date} · {event.location}
                 </p>
               </div>
-              <CTAButton to="/events" variant="outline" size="sm">
-                Details
-              </CTAButton>
-            </div>
+              <span className="inline-flex items-center gap-1.5 font-body text-xs font-semibold tracking-[0.18em] uppercase text-primary group-hover:gap-3 transition-all shrink-0">
+                More info →
+              </span>
+            </button>
           ))}
         </div>
         <div className="text-center mt-12">
@@ -282,7 +290,14 @@ const Home = () => (
         </div>
       </div>
     </section>
+
+    <EventModal
+      event={activeEvent}
+      open={activeEvent !== null}
+      onOpenChange={(open) => !open && setActiveEvent(null)}
+    />
   </Layout>
-);
+  );
+};
 
 export default Home;

@@ -1,14 +1,14 @@
+import { useState } from "react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
+import EventModal from "@/components/EventModal";
 import classesImage from "@/assets/classes.jpg";
+import { classes } from "@/data/events";
 
-const classBenefits = [
-  "Learn fundamental salsa steps, spins, and partner work",
-  "Cultivate body awareness and confidence through movement",
-  "Explore musicality and rhythm to fully embody the dance",
-  "Connect with yourself and with others",
-];
+const salsaFlowClass = classes.find((c) => c.id === "salsa-and-flow-thursdays")!;
+
+const classBenefits = salsaFlowClass.highlights || [];
 
 const steps = [
   {
@@ -28,7 +28,10 @@ const steps = [
   },
 ];
 
-const Classes = () => (
+const Classes = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
   <Layout>
     {/* Hero */}
     <section className="relative py-28 px-6 overflow-hidden">
@@ -134,7 +137,7 @@ const Classes = () => (
                 48 Brunswick Street West, Hove BN3 1EL
               </p>
 
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <CTAButton
                   to="https://www.flowstate-hove.com/schedule"
                   variant="light"
@@ -142,6 +145,13 @@ const Classes = () => (
                 >
                   Book via Flow State
                 </CTAButton>
+                <button
+                  type="button"
+                  onClick={() => setModalOpen(true)}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-body text-sm font-semibold tracking-[0.18em] uppercase text-primary-foreground hover:text-primary-foreground/80 transition-colors"
+                >
+                  More info →
+                </button>
               </div>
             </div>
 
@@ -182,7 +192,14 @@ const Classes = () => (
         </div>
       </div>
     </section>
+
+    <EventModal
+      event={salsaFlowClass}
+      open={modalOpen}
+      onOpenChange={setModalOpen}
+    />
   </Layout>
-);
+  );
+};
 
 export default Classes;
