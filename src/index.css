@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Ms+Madi&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Sacramento&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -95,10 +95,10 @@
 }
 
 @layer utilities {
-  /* Script — Sacramento (original handwritten flourish) */
+  /* Script — Ms Madi (elegant signature) */
   .font-handwritten,
   .font-script {
-    font-family: 'Sacramento', cursive;
+    font-family: 'Ms Madi', 'Sacramento', cursive;
     font-weight: 400;
   }
 
