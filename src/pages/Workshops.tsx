@@ -1,26 +1,6 @@
 import Layout from "@/components/Layout";
-import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import workshopsImage from "@/assets/workshops.jpg";
-
-const workshops = [
-  {
-    title: "Embodied Confidence: Move Beyond Fear",
-    date: "Saturday 10 May, 2–5 PM",
-    location: "Hove Studio",
-    description:
-      "A 3-hour deep dive into somatic movement, breathwork, and salsa — designed to help you release fear and step into your power.",
-    price: "£45",
-  },
-  {
-    title: "Salsa & Surrender: A Dance of Trust",
-    date: "Saturday 7 June, 2–5 PM",
-    location: "Brighton Centre",
-    description:
-      "Explore the art of leading and following as a metaphor for trust, boundaries, and surrender in life and relationships.",
-    price: "£45",
-  },
-];
 
 const Workshops = () => (
   <Layout>
@@ -65,48 +45,32 @@ const Workshops = () => (
       </div>
     </section>
 
-    {/* Schedule */}
+    {/* Enquiry */}
     <section className="section-warm py-28 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <SectionHeading handwritten="upcoming" title="Workshop Schedule" />
-        <div className="space-y-6">
-          {workshops.map((w, i) => (
-            <div
-              key={i}
-              className="group relative bg-card border border-border/60 rounded-2xl p-10 shadow-warm hover:shadow-warm-lg hover:-translate-y-1 hover:border-primary/40 transition-all duration-500 overflow-hidden"
-            >
-              <div
-                className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-gradient-to-br from-orange-100 to-warm-peach opacity-0 group-hover:opacity-70 blur-3xl transition-opacity duration-700 pointer-events-none"
-                aria-hidden="true"
-              />
-              <div className="relative flex flex-col md:flex-row md:items-start justify-between gap-6">
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl md:text-3xl font-semibold mb-3 tracking-tight leading-tight">
-                    {w.title}
-                  </h3>
-                  <p className="inline-block font-body text-[0.7rem] font-bold tracking-[0.2em] uppercase text-primary bg-warm-peach px-3 py-1 rounded-full mb-4">
-                    {w.date} · {w.location}
-                  </p>
-                  <p className="font-body text-[0.98rem] text-muted-foreground leading-relaxed">
-                    {w.description}
-                  </p>
-                </div>
-                <div className="flex md:flex-col items-center md:items-end gap-4 shrink-0">
-                  <div className="text-right">
-                    <span className="font-statement text-4xl text-transparent bg-gradient-to-br from-orange-600 to-orange-400 bg-clip-text block leading-none">
-                      {w.price}
-                    </span>
-                    <span className="font-body text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-                      per person
-                    </span>
-                  </div>
-                  <CTAButton to="/contact" variant="primary" size="sm">
-                    Book
-                  </CTAButton>
-                </div>
-              </div>
-            </div>
-          ))}
+      <div className="container mx-auto max-w-3xl">
+        <div className="relative overflow-hidden rounded-3xl bg-card border border-border/60 shadow-warm-lg p-10 md:p-14 text-center">
+          <div
+            className="absolute -top-24 -right-24 w-80 h-80 rounded-full opacity-40 blur-3xl pointer-events-none"
+            style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
+            aria-hidden="true"
+          />
+          <div className="relative">
+            <span className="font-handwritten text-3xl text-primary block mb-2">
+              by enquiry only
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4">
+              Bespoke <span className="italic">Workshops</span>
+            </h2>
+            <div className="h-[2px] w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-6" />
+            <p className="font-body text-[1rem] text-muted-foreground leading-relaxed max-w-xl mx-auto mb-8">
+              Workshops are announced periodically and held in intimate groups.
+              Get in touch to be notified of the next one, or to enquire about
+              a private workshop for your team, retreat, or event.
+            </p>
+            <CTAButton to="/contact" variant="primary" size="lg">
+              Enquire About Workshops
+            </CTAButton>
+          </div>
         </div>
       </div>
     </section>
