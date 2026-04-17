@@ -14,12 +14,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
-        serifElegant: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
-        statement: ['"Playfair Display"', 'serif'],
+        display: ['"Playfair Display"', '"Abril Fatface"', 'serif'],
+        statement: ['"Abril Fatface"', '"Playfair Display"', 'serif'],
+        serifElegant: ['"Playfair Display"', '"Abril Fatface"', 'serif'],
         body: ['"Barlow"', '"Inter"', 'sans-serif'],
         sansRefined: ['"Inter"', '"Barlow"', 'sans-serif'],
-        handwritten: ['"Sacramento"', 'cursive'],
+        handwritten: ['"Allura"', '"Sacramento"', 'cursive'],
+        script: ['"Allura"', '"Sacramento"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -17,12 +17,12 @@ const Footer = () => (
         <div className="grid md:grid-cols-3 gap-14">
           {/* Brand */}
           <div>
-            <div className="flex items-baseline gap-1.5 mb-4">
-              <span className="font-handwritten text-5xl text-primary-foreground leading-none">
-                Salsa
+            <div className="flex items-baseline gap-2 mb-4 flex-wrap">
+              <span className="font-script text-[3.5rem] text-primary-foreground leading-none">
+                Salsa&nbsp;&amp;
               </span>
-              <span className="font-display text-2xl text-primary-foreground/95 leading-none">
-                &amp; Flow
+              <span className="font-statement text-4xl text-primary-foreground/95 leading-none tracking-[0.06em] uppercase">
+                Flow
               </span>
             </div>
             <p className="font-body text-sm text-primary-foreground/80 leading-relaxed max-w-xs">

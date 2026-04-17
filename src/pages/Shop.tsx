@@ -123,7 +123,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
         {/* Offer badge */}
         {product.offer && (
-          <span className="absolute top-4 left-4 font-body text-[0.65rem] font-bold tracking-[0.18em] uppercase bg-primary-foreground text-primary px-3 py-1.5 rounded-full shadow-warm">
+          <span className="absolute top-4 left-4 font-body text-[0.65rem] font-bold tracking-[0.18em] uppercase bg-primary-foreground text-primary px-3 py-1.5 rounded-full shadow-warm ring-1 ring-primary/10">
             {product.offer}
           </span>
         )}

@@ -66,7 +66,7 @@ const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-orange-gradient text-primary-foreground font-body text-sm font-semibold tracking-[0.18em] uppercase rounded-full shadow-orange-glow hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-8px_hsl(25_100%_47%_/_0.6)] transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-body text-sm font-semibold tracking-[0.18em] uppercase rounded-full hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-orange-glow transition-all duration-300"
                 >
                   Send Message
                 </button>
@@ -84,7 +84,7 @@ const Contact = () => {
                   href="mailto:verity@salsaandflow.com"
                   className="flex items-center gap-4 font-body text-foreground hover:text-primary transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-orange-gradient group-hover:text-primary-foreground transition-all">
+                  <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                     <Mail size={18} />
                   </span>
                   verity@salsaandflow.com
@@ -95,7 +95,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 font-body text-foreground hover:text-primary transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-orange-gradient group-hover:text-primary-foreground transition-all">
+                  <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                     <Instagram size={18} />
                   </span>
                   @_dancingishealing
@@ -106,7 +106,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 font-body text-foreground hover:text-primary transition-colors group"
                 >
-                  <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-orange-gradient group-hover:text-primary-foreground transition-all">
+                  <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                     <Linkedin size={18} />
                   </span>
                   Verity Iris

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allura&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,59 +8,60 @@
   :root {
     /* Warm cream background, deep charcoal text */
     --background: 32 55% 97%;
-    --foreground: 22 18% 14%;
+    --foreground: 18 25% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 22 18% 14%;
+    --card-foreground: 18 25% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 22 18% 14%;
+    --popover-foreground: 18 25% 13%;
 
-    /* Brand orange from the Linktree: #EF6500 */
-    --primary: 25 100% 47%;
-    --primary-foreground: 40 100% 98%;
+    /* Brand orange pulled from the style guide gradients
+       — a redder, more sunset-saturated orange than the Linktree base. */
+    --primary: 15 88% 48%;
+    --primary-foreground: 36 100% 98%;
 
-    /* Accent orange: #FF7A19 */
-    --accent: 25 100% 55%;
-    --accent-foreground: 40 100% 98%;
+    --accent: 15 95% 55%;
+    --accent-foreground: 36 100% 98%;
 
     --secondary: 32 55% 97%;
-    --secondary-foreground: 22 18% 14%;
+    --secondary-foreground: 18 25% 13%;
 
-    --muted: 28 30% 93%;
-    --muted-foreground: 22 10% 38%;
+    --muted: 26 35% 93%;
+    --muted-foreground: 18 12% 36%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 28 25% 89%;
-    --input: 28 25% 89%;
-    --ring: 25 100% 47%;
+    --border: 26 30% 89%;
+    --input: 26 30% 89%;
+    --ring: 15 88% 48%;
 
     --radius: 1rem;
 
     /* Warm palette tokens */
     --warm-white: 32 60% 97%;
-    --warm-cream: 28 50% 94%;
-    --warm-peach: 25 80% 94%;
-    --warm-blush: 18 65% 92%;
-    --charcoal: 22 18% 14%;
+    --warm-cream: 28 55% 94%;
+    --warm-peach: 25 85% 91%;
+    --warm-blush: 18 70% 90%;
+    --charcoal: 18 25% 13%;
 
-    /* Orange scale */
-    --orange-50: 30 100% 96%;
-    --orange-100: 28 100% 92%;
-    --orange-200: 27 100% 85%;
-    --orange-300: 26 100% 72%;
-    --orange-400: 25 100% 60%;
-    --orange-500: 25 100% 55%;
-    --orange-600: 25 100% 47%;
-    --orange-700: 22 95% 40%;
-    --orange-800: 20 90% 33%;
+    /* Sunset orange scale — pulled from style guide gradients */
+    --orange-50: 32 100% 96%;
+    --orange-100: 28 100% 90%;
+    --orange-200: 25 95% 82%;
+    --orange-300: 22 92% 70%;
+    --orange-400: 18 92% 58%;
+    --orange-500: 15 95% 53%;
+    --orange-600: 12 85% 45%;
+    --orange-700: 10 78% 37%;
+    --orange-800: 8 72% 30%;
+    --orange-900: 8 68% 23%;
 
     /* Legacy tokens retained for compatibility */
-    --terracotta: 25 100% 47%;
-    --terracotta-light: 28 100% 92%;
-    --terracotta-dark: 22 95% 40%;
+    --terracotta: 15 88% 48%;
+    --terracotta-light: 28 100% 90%;
+    --terracotta-dark: 10 78% 37%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -80,12 +81,11 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    font-feature-settings: "ss01", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
 
   ::selection {
@@ -95,21 +95,28 @@
 }
 
 @layer utilities {
-  .font-handwritten {
-    font-family: 'Sacramento', cursive;
+  /* Script — signature Brittany-style (Allura as licence-free proxy) */
+  .font-handwritten,
+  .font-script {
+    font-family: 'Allura', 'Sacramento', cursive;
+    font-weight: 400;
   }
 
+  /* Primary display serif — section headings, body-weight flexibility */
   .font-display {
-    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+    font-family: 'Playfair Display', 'Abril Fatface', serif;
   }
 
-  .font-serif-elegant {
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-  }
-
+  /* Chunky display — style-guide FLOW / SOUL lockup moments only.
+     Abril Fatface only ships 400 weight, so don't combine with font-bold. */
   .font-statement {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'Abril Fatface', 'Playfair Display', serif;
+    font-weight: 400;
+  }
+
+  /* Refined serif alternative for italic display text */
+  .font-serif-elegant {
+    font-family: 'Playfair Display', 'Abril Fatface', serif;
   }
 
   .font-body {
@@ -140,17 +147,36 @@
     background-color: hsl(var(--warm-peach));
   }
 
-  /* Elegant gradient backgrounds */
+  /* Sunset gradients tuned to the style-guide artwork:
+     radial peach-to-red-orange with a warm highlight in the upper-left. */
   .bg-orange-gradient {
-    background: linear-gradient(135deg, hsl(var(--orange-600)) 0%, hsl(var(--orange-500)) 60%, hsl(var(--orange-400)) 100%);
+    background:
+      radial-gradient(ellipse at 25% 30%, hsl(32 100% 82%) 0%, transparent 55%),
+      linear-gradient(135deg, hsl(15 95% 53%) 0%, hsl(12 85% 45%) 55%, hsl(8 72% 30%) 100%);
   }
 
   .bg-sunset-gradient {
-    background: linear-gradient(180deg, hsl(var(--orange-500)) 0%, hsl(var(--orange-700)) 100%);
+    background:
+      radial-gradient(ellipse at 20% 25%, hsl(32 100% 82% / 0.85), transparent 55%),
+      linear-gradient(180deg, hsl(15 95% 50%) 0%, hsl(10 78% 37%) 100%);
   }
 
   .bg-warm-gradient {
     background: linear-gradient(180deg, hsl(var(--warm-white)) 0%, hsl(var(--warm-peach)) 100%);
+  }
+
+  /* Grain overlay — subtle paper texture seen throughout the style guide */
+  .bg-grain {
+    position: relative;
+  }
+  .bg-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
   /* Orange accent divider */
@@ -164,30 +190,19 @@
     border-radius: 2px;
   }
 
-  .divider-accent-left::after {
-    content: "";
-    display: block;
-    width: 48px;
-    height: 2px;
-    background: linear-gradient(90deg, hsl(var(--orange-600)), hsl(var(--orange-400)));
-    margin: 20px 0 0;
-    border-radius: 2px;
-  }
-
   /* Soft elevated card shadow */
   .shadow-warm {
-    box-shadow: 0 1px 2px hsl(22 20% 14% / 0.04), 0 8px 24px -8px hsl(25 80% 40% / 0.12);
+    box-shadow: 0 1px 2px hsl(18 25% 13% / 0.05), 0 8px 24px -8px hsl(15 80% 35% / 0.14);
   }
 
   .shadow-warm-lg {
-    box-shadow: 0 2px 4px hsl(22 20% 14% / 0.04), 0 20px 40px -12px hsl(25 80% 40% / 0.18);
+    box-shadow: 0 2px 4px hsl(18 25% 13% / 0.05), 0 20px 40px -12px hsl(15 80% 35% / 0.2);
   }
 
   .shadow-orange-glow {
-    box-shadow: 0 8px 32px -8px hsl(25 100% 47% / 0.45);
+    box-shadow: 0 8px 32px -8px hsl(15 88% 48% / 0.5);
   }
 
-  /* Subtle text gradient for hero */
   .text-gradient-orange {
     background: linear-gradient(90deg, hsl(var(--orange-500)), hsl(var(--orange-700)));
     -webkit-background-clip: text;
@@ -197,14 +212,8 @@
 }
 
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
@@ -222,30 +231,14 @@
   50% { transform: translateY(-8px); }
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.animate-shimmer {
-  animation: shimmer 4s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
+.animate-fade-in-up { animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+.animate-fade-in    { animation: fade-in 0.6s ease-out forwards; opacity: 0; }
+.animate-shimmer    { animation: shimmer 4s ease-in-out infinite; }
+.animate-float      { animation: float 6s ease-in-out infinite; }
 .animate-delay-100 { animation-delay: 0.1s; }
 .animate-delay-200 { animation-delay: 0.2s; }
 .animate-delay-300 { animation-delay: 0.3s; }
 .animate-delay-400 { animation-delay: 0.4s; }
 .animate-delay-500 { animation-delay: 0.5s; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }

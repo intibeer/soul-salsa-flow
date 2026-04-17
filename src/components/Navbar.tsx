@@ -35,11 +35,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <Link to="/" className="flex items-baseline gap-1.5 group" aria-label="Salsa & Flow home">
-          <span className="font-handwritten text-[2rem] leading-none text-primary transition-transform group-hover:-rotate-3 duration-300">
-            Salsa
+          <span className="font-script text-[2.2rem] leading-none text-primary transition-transform group-hover:-rotate-3 duration-300">
+            Salsa&nbsp;&amp;
           </span>
-          <span className="font-display text-lg leading-none text-foreground tracking-tight">
-            &amp; Flow
+          <span className="font-statement text-xl leading-none text-foreground tracking-[0.06em] uppercase">
+            Flow
           </span>
         </Link>
 

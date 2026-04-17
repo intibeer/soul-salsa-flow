@@ -90,13 +90,13 @@ const Home = () => (
       </div>
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-8">
-        <p className="font-handwritten text-3xl md:text-5xl text-primary-foreground/95 mb-4 animate-fade-in-up">
+        <p className="font-script text-4xl md:text-6xl text-primary-foreground/95 mb-4 animate-fade-in-up leading-none">
           this is how your life changes
         </p>
-        <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] text-primary-foreground font-semibold leading-[1.02] tracking-tight mb-8 animate-fade-in-up animate-delay-100">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] text-primary-foreground leading-[1.02] tracking-tight mb-8 animate-fade-in-up animate-delay-100 uppercase">
           Find your confidence.
           <br />
-          <span className="italic font-normal">Feel alive</span> in your body.
+          <span className="normal-case italic font-normal font-serif-elegant">Feel alive</span> in your body.
         </h1>
         <p className="font-body text-lg md:text-xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
           Salsa &amp; Flow is where dance meets mindfulness — helping you feel
@@ -286,7 +286,7 @@ const Home = () => (
             placeholder="Your email address"
             className="flex-1 px-5 py-3.5 rounded-full bg-card border border-border text-foreground font-body text-sm placeholder:text-muted-foreground/70 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
           />
-          <button className="px-7 py-3.5 bg-orange-gradient text-primary-foreground font-body text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-orange-glow hover:-translate-y-0.5 transition-all">
+          <button className="px-7 py-3.5 bg-primary text-primary-foreground font-body text-xs font-bold tracking-[0.18em] uppercase rounded-full hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-orange-glow transition-all">
             Subscribe
           </button>
         </div>
