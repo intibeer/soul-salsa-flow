@@ -27,10 +27,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      style={{ top: "var(--ribbon-h, 0px)" }}
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-background/85 backdrop-blur-xl border-b border-border/60 shadow-warm"
-          : "bg-background/40 backdrop-blur-md border-b border-transparent"
+          : "bg-background/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">

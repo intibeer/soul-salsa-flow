@@ -8,7 +8,6 @@ interface Product {
   price?: string;
   url?: string;
   image?: string;
-  emoji: string;
 }
 
 const products: Product[] = [
@@ -21,7 +20,6 @@ const products: Product[] = [
     url: "https://amphibotanicals.com/?ref=VERITYCOOPER",
     image:
       "https://ugc.production.linktr.ee/4a2603f2-f2d6-4eaa-be43-f7a5ae70eabb_Minimalist-Floral-Hello-Spring-Facebook-Post.png?io=true&size=thumbnail-stack_v1_0",
-    emoji: "🍄",
   },
   {
     title: "Ouroboros Ring",
@@ -31,7 +29,6 @@ const products: Product[] = [
     image:
       "https://ugc.production.linktr.ee/88c5d712-abaf-4b62-b374-a3061f48a3c1_3ff5b64623fc9d9ae82bb0012ba1ebfb.jpeg?io=true&size=thumbnail-stack_v1_0",
     url: "https://www.instagram.com/_dancingishealing",
-    emoji: "◯",
   },
   {
     title: "Gousto",
@@ -42,7 +39,6 @@ const products: Product[] = [
     url: "https://www.gousto.co.uk/raf/?promo_code=VERIT42302179",
     image:
       "https://ugc.production.linktr.ee/a6cffb7d-12ba-4229-9506-70ba8d40c721_fvvoivoc.jpeg?io=true&size=thumbnail-stack_v1_0",
-    emoji: "🥘",
   },
   {
     title: "Wild",
@@ -51,7 +47,6 @@ const products: Product[] = [
       "Refillable, kind to skin, kind to the planet — my everyday non-negotiable.",
     offer: "Referral discount",
     url: "https://mention-me.com/m/ol/pp7mx-verity-cooper",
-    emoji: "🌿",
   },
   {
     title: "Geowear — Brown Jumpsuit",
@@ -59,7 +54,6 @@ const products: Product[] = [
     description:
       "The jumpsuit I live in between class and coffee. Flattering, stretchy, made to move.",
     price: "£79.99",
-    emoji: "🤎",
   },
   {
     title: "Geowear — Blue Dancewear Jumpsuit",
@@ -67,7 +61,6 @@ const products: Product[] = [
     description:
       "My go-to for photoshoots and socials. Cut for dance, gorgeous for everything else.",
     price: "£79.99",
-    emoji: "💙",
   },
 ];
 
@@ -112,14 +105,6 @@ const ProductCard = ({ product }: { product: Product }) => {
               "radial-gradient(ellipse at 30% 20%, hsl(40 100% 85% / 0.7), transparent 55%)",
           }}
         />
-
-        {/* Emoji glyph */}
-        <span
-          className="absolute top-4 right-4 w-11 h-11 rounded-full bg-primary-foreground/20 backdrop-blur-md flex items-center justify-center text-xl border border-primary-foreground/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500"
-          aria-hidden="true"
-        >
-          {product.emoji}
-        </span>
 
         {/* Offer badge */}
         {product.offer && (

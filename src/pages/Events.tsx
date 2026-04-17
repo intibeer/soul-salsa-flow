@@ -45,36 +45,6 @@ const events: EventItem[] = [
     url: "https://www.syncupevents.com/events/east-sussex-bachata-on-tuesdays-by-salsa-flow",
     cta: "Book on SyncUp",
   },
-  {
-    title: "Salsa & Flirt Social",
-    date: "Sat 26 April, 8 PM – Midnight",
-    location: "The Haunt, Brighton",
-    type: "Social",
-  },
-  {
-    title: "Full Moon Flow Dance",
-    date: "Fri 9 May, 7:30 – 9:30 PM",
-    location: "Beach Studio, Hove",
-    type: "Special",
-  },
-  {
-    title: "Summer Salsa on the Seafront",
-    date: "Sun 15 June, 4 – 8 PM",
-    location: "Brighton Beach",
-    type: "Event",
-  },
-  {
-    title: "Salsa & Flirt Social",
-    date: "Sat 28 June, 8 PM – Midnight",
-    location: "The Haunt, Brighton",
-    type: "Social",
-  },
-  {
-    title: "Solstice Dance Ceremony",
-    date: "Sat 21 June, 6 – 9 PM",
-    location: "Stanmer Park",
-    type: "Special",
-  },
 ];
 
 const typeStyles: Record<string, string> = {

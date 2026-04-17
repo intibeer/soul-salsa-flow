@@ -3,10 +3,11 @@ import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import classesImage from "@/assets/classes.jpg";
 
-const schedule = [
-  { day: "Monday", time: "7:00 – 8:15 PM", level: "All Levels", location: "Hove Studio" },
-  { day: "Wednesday", time: "7:30 – 8:45 PM", level: "Improvers", location: "Brighton Centre" },
-  { day: "Saturday", time: "10:00 – 11:30 AM", level: "Beginners Welcome", location: "Hove Studio" },
+const classBenefits = [
+  "Learn fundamental salsa steps, spins, and partner work",
+  "Cultivate body awareness and confidence through movement",
+  "Explore musicality and rhythm to fully embody the dance",
+  "Connect with yourself and with others",
 ];
 
 const steps = [
@@ -106,37 +107,78 @@ const Classes = () => (
 
     {/* Schedule */}
     <section className="py-28 px-6">
-      <div className="container mx-auto max-w-3xl">
+      <div className="container mx-auto max-w-4xl">
         <SectionHeading handwritten="this week" title="Class Schedule" />
-        <div className="space-y-4">
-          {schedule.map((s, i) => (
-            <div
-              key={i}
-              className="bg-card border border-border/60 rounded-2xl p-7 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 shadow-warm hover:shadow-warm-lg hover:border-primary/40 transition-all duration-300"
-            >
-              <div>
-                <h3 className="font-display text-xl font-semibold tracking-tight">
-                  {s.day}
-                </h3>
-                <p className="font-body text-sm text-muted-foreground mt-0.5">
-                  {s.time} · {s.location}
-                </p>
-              </div>
-              <span className="font-body text-[0.65rem] font-bold tracking-[0.22em] uppercase text-primary bg-warm-peach px-4 py-1.5 rounded-full">
-                {s.level}
+
+        <div className="relative overflow-hidden rounded-3xl bg-card border border-border/60 shadow-warm-lg">
+          <div className="relative grid md:grid-cols-[1fr_1.4fr]">
+            {/* Left: time + location panel */}
+            <div className="relative p-10 md:p-12 bg-sunset-gradient text-primary-foreground bg-grain">
+              <span className="inline-block font-body text-[0.65rem] font-bold tracking-[0.22em] uppercase bg-primary-foreground text-primary px-3 py-1.5 rounded-full mb-5">
+                Thursdays · Weekly
               </span>
+              <h3 className="font-statement text-5xl md:text-6xl leading-[0.95] tracking-tight mb-3 uppercase">
+                Salsa
+                <br />
+                <span className="normal-case font-script text-[1.1em]">&amp;</span>{" "}
+                Flow
+              </h3>
+              <div className="h-[2px] w-12 rounded-full bg-primary-foreground/70 mb-6" />
+              <p className="font-handwritten text-3xl text-primary-foreground/90 mb-2">
+                at Flow State
+              </p>
+              <p className="font-body text-primary-foreground/90 leading-relaxed mb-1">
+                <span className="font-bold">7:45 PM</span> · Thursdays
+              </p>
+              <p className="font-body text-primary-foreground/80 leading-relaxed text-[0.95rem]">
+                48 Brunswick Street West, Hove BN3 1EL
+              </p>
+
+              <div className="mt-8">
+                <CTAButton
+                  to="https://www.flowstate-hove.com/schedule"
+                  variant="light"
+                  external
+                >
+                  Book via Flow State
+                </CTAButton>
+              </div>
             </div>
-          ))}
-        </div>
-        <div className="text-center mt-14">
-          <CTAButton
-            to="https://www.flowstate-hove.com/schedule"
-            variant="primary"
-            external
-            size="lg"
-          >
-            Book Now via Flow State
-          </CTAButton>
+
+            {/* Right: description */}
+            <div className="p-10 md:p-12">
+              <h4 className="font-display text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-4">
+                Experience the true joy of movement
+              </h4>
+              <div className="h-[2px] w-10 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mb-6" />
+              <p className="font-body text-[1rem] text-muted-foreground leading-relaxed mb-4">
+                Salsa is more than just a dance — it's a powerful way to enter
+                a flow state, where movement becomes effortless, the mind
+                quiets, and you connect deeply with the music, your partner,
+                and yourself.
+              </p>
+              <ul className="space-y-2.5 mb-5">
+                {classBenefits.map((b) => (
+                  <li key={b} className="flex items-start gap-3 font-body text-[0.95rem] text-foreground/90">
+                    <span className="text-primary mt-0.5">✦</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="font-body text-[0.95rem] text-muted-foreground leading-relaxed mb-4">
+                Salsa is great for cardiovascular health, coordination, brain
+                function, memory, and confidence. The rhythmic movement
+                quietens the mind; the music lifts the spirit; dancing with
+                others boosts oxytocin — the hormone of connection.
+              </p>
+              <p className="font-body text-[0.95rem] text-muted-foreground leading-relaxed">
+                No partner or experience needed — just bring your energy and
+                an open heart. Whether you're here to improve your skills or
+                simply lose yourself in the rhythm, you'll leave feeling
+                uplifted, present, and alive.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

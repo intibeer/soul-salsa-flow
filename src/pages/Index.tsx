@@ -109,13 +109,6 @@ const Home = () => (
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animate-delay-500 hidden sm:block">
-        <div className="flex flex-col items-center gap-2 text-primary-foreground/70">
-          <span className="font-body text-[0.65rem] tracking-[0.3em] uppercase">scroll</span>
-          <div className="w-[1px] h-10 bg-gradient-to-b from-primary-foreground/80 to-transparent animate-shimmer" />
-        </div>
-      </div>
     </section>
 
     {/* Three Pillars */}
