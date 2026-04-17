@@ -14,9 +14,11 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
-        statement: ['"Abril Fatface"', 'serif'],
-        body: ['"Lato"', 'sans-serif'],
+        display: ['"Playfair Display"', '"Cormorant Garamond"', 'serif'],
+        serifElegant: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
+        statement: ['"Playfair Display"', 'serif'],
+        body: ['"Barlow"', '"Inter"', 'sans-serif'],
+        sansRefined: ['"Inter"', '"Barlow"', 'sans-serif'],
         handwritten: ['"Sacramento"', 'cursive'],
       },
       colors: {
@@ -54,7 +56,21 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         "warm-white": "hsl(var(--warm-white))",
+        "warm-cream": "hsl(var(--warm-cream))",
+        "warm-peach": "hsl(var(--warm-peach))",
+        "warm-blush": "hsl(var(--warm-blush))",
         charcoal: "hsl(var(--charcoal))",
+        orange: {
+          50: "hsl(var(--orange-50))",
+          100: "hsl(var(--orange-100))",
+          200: "hsl(var(--orange-200))",
+          300: "hsl(var(--orange-300))",
+          400: "hsl(var(--orange-400))",
+          500: "hsl(var(--orange-500))",
+          600: "hsl(var(--orange-600))",
+          700: "hsl(var(--orange-700))",
+          800: "hsl(var(--orange-800))",
+        },
         terracotta: {
           DEFAULT: "hsl(var(--terracotta))",
           light: "hsl(var(--terracotta-light))",
@@ -73,8 +89,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 4px)",
+        sm: "calc(var(--radius) - 8px)",
       },
       keyframes: {
         "accordion-down": {
