@@ -26,7 +26,7 @@ const events: EventItem[] = [
     date: "Fri 13 February, 7:30 PM",
     location: "Brighton",
     type: "Social",
-    url: "https://www.eventbrite.com/e/salsa-flirt-valentines-salsa-speed-dating-social-tickets-1980198681562?aff=oddtdtcreator",
+    url: "https://www.eventbrite.co.uk/e/salsa-flirt-valentines-salsa-speed-dating-couples-date-night-social-tickets-1980198681562?aff=oddtdtcreator",
     cta: "Book on Eventbrite",
   },
   {
