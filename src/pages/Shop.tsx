@@ -1,112 +1,167 @@
 import Layout from "@/components/Layout";
-import SectionHeading from "@/components/SectionHeading";
 
 interface Product {
   title: string;
+  tagline: string;
   description: string;
   offer?: string;
   price?: string;
   url?: string;
   image?: string;
-  emoji?: string;
+  emoji: string;
 }
 
 const products: Product[] = [
   {
     title: "Amphi Botanicals",
+    tagline: "Adaptogen mushroom drinks",
     description:
-      "Adaptogen mushroom drinks I sip on to stay grounded, focused, and energised through busy teaching weeks.",
+      "What I sip on to stay grounded, focused, and energised through busy teaching weeks.",
     offer: "15% off with VERITYCOOPER",
     url: "https://amphibotanicals.com/?ref=VERITYCOOPER",
     image:
       "https://ugc.production.linktr.ee/4a2603f2-f2d6-4eaa-be43-f7a5ae70eabb_Minimalist-Floral-Hello-Spring-Facebook-Post.png?io=true&size=thumbnail-stack_v1_0",
+    emoji: "🍄",
   },
   {
     title: "Ouroboros Ring",
+    tagline: "by Rebekah Ann Jewellery",
     description:
-      "My self-engagement ring by Rebekah Ann Jewellery — a daily reminder to choose myself first.",
+      "My self-engagement ring — a daily reminder to choose myself first.",
     image:
       "https://ugc.production.linktr.ee/88c5d712-abaf-4b62-b374-a3061f48a3c1_3ff5b64623fc9d9ae82bb0012ba1ebfb.jpeg?io=true&size=thumbnail-stack_v1_0",
-    url: "https://www.instagram.com/dancingishealing_",
+    url: "https://www.instagram.com/_dancingishealing",
+    emoji: "◯",
   },
   {
     title: "Gousto",
+    tagline: "Recipe box",
     description:
-      "Recipe boxes that keep dinners simple on dance-night-heavy weeks. Real ingredients, proper flavour.",
-    offer: "65% off your first box",
+      "Real ingredients, proper flavour, and easy dinners on dance-night-heavy weeks.",
+    offer: "65% off first box",
     url: "https://www.gousto.co.uk/raf/?promo_code=VERIT42302179",
     image:
       "https://ugc.production.linktr.ee/a6cffb7d-12ba-4229-9506-70ba8d40c721_fvvoivoc.jpeg?io=true&size=thumbnail-stack_v1_0",
+    emoji: "🥘",
   },
   {
     title: "Wild",
+    tagline: "Natural deodorant & body care",
     description:
-      "Refillable natural deodorant and body care — kind to skin, kind to the planet.",
+      "Refillable, kind to skin, kind to the planet — my everyday non-negotiable.",
     offer: "Referral discount",
     url: "https://mention-me.com/m/ol/pp7mx-verity-cooper",
     emoji: "🌿",
   },
   {
     title: "Geowear — Brown Jumpsuit",
+    tagline: "Everyday dance-to-life wear",
     description:
-      "The jumpsuit I live in between class and coffee. Flattering, stretchy, and built to move.",
+      "The jumpsuit I live in between class and coffee. Flattering, stretchy, made to move.",
     price: "£79.99",
-    emoji: "👗",
+    emoji: "🤎",
   },
   {
     title: "Geowear — Blue Dancewear Jumpsuit",
+    tagline: "Stage and social",
     description:
       "My go-to for photoshoots and socials. Cut for dance, gorgeous for everything else.",
     price: "£79.99",
-    emoji: "💃",
+    emoji: "💙",
   },
 ];
 
 const ProductCard = ({ product }: { product: Product }) => {
   const content = (
-    <div className="group relative h-full bg-card border border-border/60 rounded-2xl p-7 shadow-warm hover:shadow-warm-lg hover:-translate-y-1 hover:border-primary/40 transition-all duration-500 flex flex-col">
-      <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-orange-100 to-warm-peach">
+    <article className="group h-full bg-card border border-border/60 rounded-2xl overflow-hidden shadow-warm hover:shadow-warm-lg hover:-translate-y-1 hover:border-primary/40 transition-all duration-500 flex flex-col">
+      {/* Visual header with intentional blur treatment */}
+      <div className="relative aspect-[5/4] overflow-hidden">
+        {/* Soft blurred image backdrop — low-res thumbs become mood, not content */}
         {product.image ? (
-          <img
-            src={product.image}
-            alt={product.title}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          <div
+            className="absolute inset-0 scale-125"
+            style={{
+              backgroundImage: `url(${product.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "blur(28px) saturate(1.3)",
+            }}
+            aria-hidden="true"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-5xl">
-            {product.emoji || "✦"}
-          </div>
+          <div
+            className="absolute inset-0 bg-orange-gradient"
+            aria-hidden="true"
+          />
         )}
+        {/* Warm overlay to unify cards and boost contrast */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, hsl(25 100% 55% / 0.55), hsl(25 100% 40% / 0.55) 60%, hsl(22 95% 30% / 0.75))",
+          }}
+          aria-hidden="true"
+        />
+        {/* Radiant light for depth */}
+        <div
+          className="absolute inset-0 opacity-60 mix-blend-soft-light"
+          aria-hidden="true"
+          style={{
+            background:
+              "radial-gradient(ellipse at 30% 20%, hsl(40 100% 85% / 0.7), transparent 55%)",
+          }}
+        />
+
+        {/* Emoji glyph */}
+        <span
+          className="absolute top-4 right-4 w-11 h-11 rounded-full bg-primary-foreground/20 backdrop-blur-md flex items-center justify-center text-xl border border-primary-foreground/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500"
+          aria-hidden="true"
+        >
+          {product.emoji}
+        </span>
+
+        {/* Offer badge */}
         {product.offer && (
-          <span className="absolute top-3 left-3 font-body text-[0.65rem] font-bold tracking-[0.18em] uppercase bg-orange-gradient text-primary-foreground px-3 py-1.5 rounded-full shadow-warm">
+          <span className="absolute top-4 left-4 font-body text-[0.65rem] font-bold tracking-[0.18em] uppercase bg-primary-foreground text-primary px-3 py-1.5 rounded-full shadow-warm">
             {product.offer}
           </span>
         )}
+
+        {/* Centred title on top of the mood backdrop */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+          <span className="font-handwritten text-2xl text-primary-foreground/85 mb-1">
+            {product.tagline}
+          </span>
+          <h3 className="font-display text-2xl md:text-3xl text-primary-foreground font-semibold leading-tight tracking-tight text-balance">
+            {product.title}
+          </h3>
+        </div>
       </div>
-      <h3 className="font-display text-xl font-semibold mb-2 tracking-tight leading-tight">
-        {product.title}
-      </h3>
-      <p className="font-body text-[0.95rem] text-muted-foreground leading-relaxed flex-1">
-        {product.description}
-      </p>
-      <div className="mt-5 pt-5 border-t border-border/60 flex items-center justify-between">
-        {product.price ? (
-          <span className="font-statement text-2xl text-transparent bg-gradient-to-br from-orange-600 to-orange-400 bg-clip-text">
-            {product.price}
-          </span>
-        ) : (
-          <span className="font-body text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
-            Verity's pick
-          </span>
-        )}
-        {product.url && (
-          <span className="inline-flex items-center gap-1.5 font-body text-xs font-semibold tracking-[0.18em] uppercase text-primary group-hover:gap-3 transition-all">
-            Shop <span aria-hidden="true">→</span>
-          </span>
-        )}
+
+      {/* Body */}
+      <div className="p-7 flex-1 flex flex-col">
+        <p className="font-body text-[0.95rem] text-muted-foreground leading-relaxed flex-1">
+          {product.description}
+        </p>
+        <div className="mt-6 pt-5 border-t border-border/60 flex items-center justify-between">
+          {product.price ? (
+            <span className="font-statement text-2xl text-transparent bg-gradient-to-br from-orange-600 to-orange-400 bg-clip-text">
+              {product.price}
+            </span>
+          ) : (
+            <span className="font-body text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground">
+              Verity's pick
+            </span>
+          )}
+          {product.url && (
+            <span className="inline-flex items-center gap-1.5 font-body text-xs font-semibold tracking-[0.18em] uppercase text-primary group-hover:gap-3 transition-all">
+              Shop <span aria-hidden="true">→</span>
+            </span>
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 
   if (product.url) {

@@ -12,7 +12,7 @@ const DEFAULT_POSTS: string[] = [
 ];
 
 const InstagramFeed = ({
-  handle = "dancingishealing_",
+  handle = "salsaandflow",
   postUrls = DEFAULT_POSTS,
 }: InstagramFeedProps) => {
   const containerRef = useRef<HTMLDivElement>(null);

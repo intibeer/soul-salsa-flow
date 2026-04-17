@@ -115,27 +115,57 @@ const About = () => (
     <section className="py-24 px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-card shadow-warm">
-          <div
-            className="absolute -top-32 -left-24 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
-            style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
-            aria-hidden="true"
-          />
-          <div className="relative grid md:grid-cols-[1fr_1.2fr] gap-0">
-            <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
-              <img
-                src="https://ugc.production.linktr.ee/2d0a4fcc-6d4d-4961-901d-1d26523abf94_69af39bbbfc81f1fe426cefa.png?io=true&size=thumbnail-stack_v1_0"
-                alt="Renaissance Room Brighton"
-                loading="lazy"
-                className="w-full h-full object-cover"
+          <div className="relative grid md:grid-cols-[1fr_1.2fr]">
+            {/* Blur-backdrop visual — low-res thumb becomes atmospheric */}
+            <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden">
+              <div
+                className="absolute inset-0 scale-125"
+                style={{
+                  backgroundImage:
+                    "url(https://ugc.production.linktr.ee/2d0a4fcc-6d4d-4961-901d-1d26523abf94_69af39bbbfc81f1fe426cefa.png?io=true&size=thumbnail-stack_v1_0)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: "blur(32px) saturate(1.3)",
+                }}
+                aria-hidden="true"
               />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(135deg, hsl(25 100% 55% / 0.45), hsl(25 100% 40% / 0.55) 60%, hsl(22 95% 28% / 0.7))",
+                }}
+                aria-hidden="true"
+              />
+              <div
+                className="absolute inset-0 opacity-60 mix-blend-soft-light"
+                aria-hidden="true"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at 25% 30%, hsl(40 100% 85% / 0.7), transparent 55%)",
+                }}
+              />
+              <div className="relative h-full flex flex-col items-center justify-center text-center p-10 min-h-[18rem]">
+                <span className="text-5xl mb-4" aria-hidden="true">
+                  ✦
+                </span>
+                <span className="font-handwritten text-3xl text-primary-foreground/90 mb-2">
+                  beyond the dance floor
+                </span>
+                <h3 className="font-display text-3xl md:text-4xl text-primary-foreground font-semibold tracking-tight leading-tight">
+                  Renaissance Room
+                  <br />
+                  <span className="italic font-normal">Brighton</span>
+                </h3>
+              </div>
             </div>
             <div className="p-10 md:p-12 flex flex-col justify-center">
               <span className="font-body text-[0.65rem] font-bold tracking-[0.22em] uppercase text-primary bg-warm-peach px-3 py-1 rounded-full self-start mb-4">
                 Creative Entrepreneurs Collective
               </span>
-              <h3 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4">
-                Renaissance Room <span className="italic">Brighton</span>
-              </h3>
+              <h4 className="font-display text-2xl md:text-3xl font-semibold tracking-tight leading-tight mb-4">
+                A leadership circle for creative founders
+              </h4>
               <div className="h-[2px] w-10 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mb-5" />
               <p className="font-body text-[1rem] text-muted-foreground leading-relaxed mb-7">
                 Beyond the dance floor, I co-host Renaissance Room — a

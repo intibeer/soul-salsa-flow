@@ -90,7 +90,7 @@ const Contact = () => {
                   verity@salsaandflow.com
                 </a>
                 <a
-                  href="https://www.instagram.com/dancingishealing_"
+                  href="https://www.instagram.com/_dancingishealing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 font-body text-foreground hover:text-primary transition-colors group"
@@ -98,7 +98,7 @@ const Contact = () => {
                   <span className="w-10 h-10 rounded-full bg-warm-peach flex items-center justify-center text-primary group-hover:bg-orange-gradient group-hover:text-primary-foreground transition-all">
                     <Instagram size={18} />
                   </span>
-                  @dancingishealing_
+                  @_dancingishealing
                 </a>
                 <a
                   href="https://linkedin.com/in/verityiris"

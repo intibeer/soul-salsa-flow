@@ -213,12 +213,12 @@ const Events = () => (
           behind-the-scenes moments.
         </p>
         <CTAButton
-          to="https://www.instagram.com/dancingishealing_"
+          to="https://www.instagram.com/salsaandflow"
           variant="primary"
           external
           size="lg"
         >
-          Follow @dancingishealing_
+          Follow @salsaandflow
         </CTAButton>
       </div>
     </section>
