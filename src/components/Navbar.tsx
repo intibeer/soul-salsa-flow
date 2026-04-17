@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/events", label: "Events" },
   { to: "/salsa-and-soul", label: "Salsa & Soul" },
   { to: "/gallery", label: "Gallery" },
+  { to: "/shop", label: "Shop" },
   { to: "/contact", label: "Contact" },
 ];
 

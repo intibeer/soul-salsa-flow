@@ -54,7 +54,7 @@ const Classes = () => (
             experience required. Just bring yourself.
           </p>
           <CTAButton
-            to="https://flowstate.com/salsaandflow"
+            to="https://www.flowstate-hove.com/schedule"
             variant="primary"
             external
             size="lg"
@@ -130,7 +130,7 @@ const Classes = () => (
         </div>
         <div className="text-center mt-14">
           <CTAButton
-            to="https://flowstate.com/salsaandflow"
+            to="https://www.flowstate-hove.com/schedule"
             variant="primary"
             external
             size="lg"

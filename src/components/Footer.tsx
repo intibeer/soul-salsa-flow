@@ -58,12 +58,12 @@ const Footer = () => (
             <div className="flex gap-3 mb-5">
               {[
                 {
-                  href: "https://instagram.com/verityiris_",
+                  href: "https://www.instagram.com/dancingishealing_",
                   label: "Instagram",
                   icon: <Instagram size={18} />,
                 },
                 {
-                  href: "https://tiktok.com/@dancinghealing",
+                  href: "https://tiktok.com/@dancingishealing",
                   label: "TikTok",
                   icon: (
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

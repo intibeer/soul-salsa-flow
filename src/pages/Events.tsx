@@ -3,12 +3,59 @@ import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
 import eventsImage from "@/assets/events.jpg";
 
-const events = [
-  { title: "Salsa & Flirt Social", date: "Sat 26 April, 8 PM – Midnight", location: "The Haunt, Brighton", type: "Social" },
-  { title: "Full Moon Flow Dance", date: "Fri 9 May, 7:30 – 9:30 PM", location: "Beach Studio, Hove", type: "Special" },
-  { title: "Summer Salsa on the Seafront", date: "Sun 15 June, 4 – 8 PM", location: "Brighton Beach", type: "Event" },
-  { title: "Salsa & Flirt Social", date: "Sat 28 June, 8 PM – Midnight", location: "The Haunt, Brighton", type: "Social" },
-  { title: "Solstice Dance Ceremony", date: "Sat 21 June, 6 – 9 PM", location: "Stanmer Park", type: "Special" },
+interface EventItem {
+  title: string;
+  date: string;
+  location: string;
+  type: "Social" | "Special" | "Event";
+  url?: string;
+  cta?: string;
+  featured?: boolean;
+  description?: string;
+}
+
+const events: EventItem[] = [
+  {
+    title: "Salsa & Flirt: Valentine's Speed Dating Social",
+    date: "Fri 13 February, 7:30 PM",
+    location: "Brighton",
+    type: "Social",
+    url: "https://www.eventbrite.com/e/salsa-flirt-valentines-salsa-speed-dating-social-tickets-1980198681562?aff=oddtdtcreator",
+    cta: "Book on Eventbrite",
+    featured: true,
+    description:
+      "My signature Valentine's night — salsa, speed dating, and the best kind of chaos. All levels welcome.",
+  },
+  {
+    title: "Salsa & Flirt Social",
+    date: "Sat 26 April, 8 PM – Midnight",
+    location: "The Haunt, Brighton",
+    type: "Social",
+  },
+  {
+    title: "Full Moon Flow Dance",
+    date: "Fri 9 May, 7:30 – 9:30 PM",
+    location: "Beach Studio, Hove",
+    type: "Special",
+  },
+  {
+    title: "Summer Salsa on the Seafront",
+    date: "Sun 15 June, 4 – 8 PM",
+    location: "Brighton Beach",
+    type: "Event",
+  },
+  {
+    title: "Salsa & Flirt Social",
+    date: "Sat 28 June, 8 PM – Midnight",
+    location: "The Haunt, Brighton",
+    type: "Social",
+  },
+  {
+    title: "Solstice Dance Ceremony",
+    date: "Sat 21 June, 6 – 9 PM",
+    location: "Stanmer Park",
+    type: "Special",
+  },
 ];
 
 const typeStyles: Record<string, string> = {
@@ -59,12 +106,54 @@ const Events = () => (
       </div>
     </section>
 
+    {/* Featured event */}
+    {events.filter((e) => e.featured).map((e) => (
+      <section key={e.title} className="py-20 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <div className="relative overflow-hidden rounded-3xl bg-orange-gradient p-10 md:p-14 shadow-warm-lg">
+            <div
+              className="absolute inset-0 opacity-30 pointer-events-none"
+              aria-hidden="true"
+              style={{
+                backgroundImage:
+                  "radial-gradient(ellipse at 10% 20%, hsl(40 100% 85% / 0.6), transparent 55%), radial-gradient(ellipse at 90% 80%, hsl(20 90% 30% / 0.55), transparent 55%)",
+              }}
+            />
+            <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-8">
+              <div className="flex-1">
+                <span className="font-handwritten text-3xl text-primary-foreground/90 block mb-2">
+                  featured
+                </span>
+                <span className="inline-block font-body text-[0.65rem] font-bold tracking-[0.22em] uppercase bg-primary-foreground text-primary px-3 py-1 rounded-full mb-4">
+                  {e.type}
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground tracking-tight leading-tight mb-3">
+                  {e.title}
+                </h2>
+                <p className="font-body text-primary-foreground/90 mb-2">
+                  {e.date} · {e.location}
+                </p>
+                {e.description && (
+                  <p className="font-body text-primary-foreground/85 max-w-xl leading-relaxed mt-3">
+                    {e.description}
+                  </p>
+                )}
+              </div>
+              <CTAButton to={e.url!} external variant="light" size="lg">
+                {e.cta || "Book Tickets"}
+              </CTAButton>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
     {/* Event List */}
-    <section className="py-28 px-6">
+    <section className="py-20 px-6">
       <div className="container mx-auto max-w-4xl">
-        <SectionHeading handwritten="what's on" title="Upcoming Events" />
+        <SectionHeading handwritten="what's on" title="All Upcoming Events" />
         <div className="space-y-4">
-          {events.map((e, i) => (
+          {events.filter((e) => !e.featured).map((e, i) => (
             <div
               key={i}
               className="group bg-card border border-border/60 rounded-2xl p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-warm hover:shadow-warm-lg hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300"
@@ -84,9 +173,15 @@ const Events = () => (
                   {e.date} · {e.location}
                 </p>
               </div>
-              <CTAButton to="/contact" variant="outline" size="sm">
-                Get Tickets
-              </CTAButton>
+              {e.url ? (
+                <CTAButton to={e.url} external variant="outline" size="sm">
+                  {e.cta || "Book"}
+                </CTAButton>
+              ) : (
+                <CTAButton to="/contact" variant="outline" size="sm">
+                  Get Tickets
+                </CTAButton>
+              )}
             </div>
           ))}
         </div>
@@ -94,34 +189,36 @@ const Events = () => (
     </section>
 
     {/* CTA */}
-    <section className="relative bg-orange-gradient py-24 px-6 text-center overflow-hidden">
+    <section className="relative py-24 px-6 text-center overflow-hidden bg-warm-gradient">
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
         aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 20% 30%, hsl(40 100% 85% / 0.5), transparent 55%), radial-gradient(ellipse at 80% 70%, hsl(20 90% 30% / 0.5), transparent 55%)",
-        }}
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
+      />
+      <div
+        className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
+        aria-hidden="true"
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-300)), transparent 70%)" }}
       />
       <div className="relative container mx-auto max-w-2xl">
-        <span className="font-handwritten text-3xl text-primary-foreground/85 block mb-2">
+        <span className="font-handwritten text-3xl text-primary block mb-2">
           don't miss a thing
         </span>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary-foreground mb-4 tracking-tight">
-          Follow Along
+        <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4 tracking-tight">
+          Follow <span className="italic text-primary">Along</span>
         </h2>
-        <div className="h-[2px] w-12 rounded-full bg-primary-foreground/60 mx-auto mb-6" />
-        <p className="font-body text-primary-foreground/85 mb-10 leading-relaxed">
-          Follow us on Instagram for the latest event announcements and
+        <div className="h-[2px] w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-6" />
+        <p className="font-body text-muted-foreground mb-10 leading-relaxed">
+          Follow on Instagram for the latest event announcements and
           behind-the-scenes moments.
         </p>
         <CTAButton
-          to="https://instagram.com/verityiris_"
-          variant="light"
+          to="https://www.instagram.com/dancingishealing_"
+          variant="primary"
           external
           size="lg"
         >
-          Follow @verityiris_
+          Follow @dancingishealing_
         </CTAButton>
       </div>
     </section>

@@ -49,7 +49,10 @@ const SalsaAndSoul = () => (
             salsa, somatic coaching, breathwork, and embodiment practices, we'll
             work together to unlock what's been held inside — and set it free.
           </p>
-          <CTAButton to="/contact" variant="primary" size="lg">Enquire Now</CTAButton>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <CTAButton to="/contact" variant="primary" size="lg">Enquire Now</CTAButton>
+            <CTAButton to="/contact" variant="outline" size="lg">Book Free Call</CTAButton>
+          </div>
         </div>
         <div className="relative">
           <div
@@ -64,6 +67,58 @@ const SalsaAndSoul = () => (
             loading="lazy"
             className="relative rounded-2xl w-full aspect-square object-cover shadow-warm-lg"
           />
+        </div>
+      </div>
+    </section>
+
+    {/* Confidence Activation Challenge */}
+    <section className="py-20 px-6">
+      <div className="container mx-auto max-w-4xl">
+        <div className="relative overflow-hidden rounded-3xl bg-warm-gradient border border-primary/20 p-10 md:p-14 shadow-warm-lg">
+          <div
+            className="absolute -top-24 -right-24 w-80 h-80 rounded-full opacity-40 blur-3xl pointer-events-none"
+            style={{ background: "radial-gradient(circle, hsl(var(--orange-300)), transparent 70%)" }}
+            aria-hidden="true"
+          />
+          <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-8 items-center">
+            <div>
+              <span className="font-handwritten text-3xl text-primary block mb-2">
+                start here
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4">
+                The <span className="italic">Confidence Activation</span> Challenge
+              </h2>
+              <div className="h-[2px] w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mb-6" />
+              <p className="font-body text-[1.02rem] text-muted-foreground leading-relaxed mb-7">
+                A short, potent self-paced challenge to reconnect you with your
+                body and your voice. Daily prompts, somatic practices, and a
+                gentle way to feel the work before you commit to 1:1.
+              </p>
+              <CTAButton
+                to="https://buy.stripe.com/test_dRm3cu87zc7E6zdc2S7EQ00"
+                external
+                variant="primary"
+                size="lg"
+              >
+                Join the Challenge
+              </CTAButton>
+            </div>
+            <div className="flex flex-col gap-4 md:items-end">
+              {[
+                "Daily somatic prompts",
+                "Private practice videos",
+                "Accessible from anywhere",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 bg-card rounded-full py-2.5 px-5 shadow-warm border border-border/60"
+                >
+                  <span className="text-primary">✦</span>
+                  <span className="font-body text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -119,28 +174,30 @@ const SalsaAndSoul = () => (
     </section>
 
     {/* Free Call CTA */}
-    <section className="relative bg-orange-gradient py-24 px-6 text-center overflow-hidden">
+    <section className="relative py-24 px-6 text-center overflow-hidden bg-warm-gradient">
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
         aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 20% 30%, hsl(40 100% 85% / 0.5), transparent 55%), radial-gradient(ellipse at 80% 70%, hsl(20 90% 30% / 0.5), transparent 55%)",
-        }}
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
+      />
+      <div
+        className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
+        aria-hidden="true"
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-300)), transparent 70%)" }}
       />
       <div className="relative container mx-auto max-w-2xl">
-        <span className="font-handwritten text-3xl text-primary-foreground/85 block mb-2">
+        <span className="font-handwritten text-3xl text-primary block mb-2">
           take the first step
         </span>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary-foreground mb-4 tracking-tight">
-          Book a Free 30-Minute Breakthrough Call
+        <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4 tracking-tight">
+          Book a Free 30-Minute <span className="italic text-primary">Breakthrough Call</span>
         </h2>
-        <div className="h-[2px] w-12 rounded-full bg-primary-foreground/60 mx-auto mb-6" />
-        <p className="font-body text-primary-foreground/85 mb-10 leading-relaxed">
+        <div className="h-[2px] w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-6" />
+        <p className="font-body text-muted-foreground mb-10 leading-relaxed">
           No pressure, no commitment. Just a conversation about where you are,
           where you want to be, and how Salsa &amp; Soul can get you there.
         </p>
-        <CTAButton to="/contact" variant="light" size="lg">Book Your Free Call</CTAButton>
+        <CTAButton to="/contact" variant="primary" size="lg">Book Your Free Call</CTAButton>
       </div>
     </section>
   </Layout>

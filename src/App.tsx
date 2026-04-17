@@ -10,6 +10,7 @@ import Workshops from "./pages/Workshops";
 import Events from "./pages/Events";
 import SalsaAndSoul from "./pages/SalsaAndSoul";
 import Gallery from "./pages/Gallery";
+import Shop from "./pages/Shop";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/salsa-and-soul" element={<SalsaAndSoul />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

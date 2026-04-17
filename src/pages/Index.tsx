@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
+import InstagramFeed from "@/components/InstagramFeed";
 import heroImage from "@/assets/hero-dance.jpg";
 import connectionImage from "@/assets/connection.jpg";
 
@@ -252,25 +253,30 @@ const Home = () => (
       </div>
     </section>
 
+    {/* Instagram */}
+    <InstagramFeed />
+
     {/* Newsletter / CTA Band */}
-    <section className="relative bg-orange-gradient py-24 px-6 overflow-hidden">
+    <section className="relative py-24 px-6 overflow-hidden bg-warm-gradient">
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
         aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 20% 30%, hsl(40 100% 85% / 0.5), transparent 55%), radial-gradient(ellipse at 80% 70%, hsl(20 90% 30% / 0.5), transparent 55%)",
-        }}
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
+      />
+      <div
+        className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
+        aria-hidden="true"
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-300)), transparent 70%)" }}
       />
       <div className="relative container mx-auto text-center max-w-2xl">
-        <span className="font-handwritten text-3xl text-primary-foreground/85 block mb-2">
+        <span className="font-handwritten text-3xl text-primary block mb-2">
           ready to
         </span>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary-foreground mb-4 tracking-tight">
-          Step Into Your Flow?
+        <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4 tracking-tight">
+          Step Into Your <span className="italic text-primary">Flow?</span>
         </h2>
-        <div className="h-[2px] w-12 rounded-full bg-primary-foreground/60 mx-auto mb-6" />
-        <p className="font-body text-primary-foreground/85 mb-10 leading-relaxed">
+        <div className="h-[2px] w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-6" />
+        <p className="font-body text-muted-foreground mb-10 leading-relaxed">
           Join the mailing list for class updates, event invites, and a dose of
           inspiration in your inbox.
         </p>
@@ -278,9 +284,9 @@ const Home = () => (
           <input
             type="email"
             placeholder="Your email address"
-            className="flex-1 px-5 py-3.5 rounded-full bg-primary-foreground/15 border border-primary-foreground/40 text-primary-foreground font-body text-sm placeholder:text-primary-foreground/60 focus:outline-none focus:border-primary-foreground focus:bg-primary-foreground/25 transition-all"
+            className="flex-1 px-5 py-3.5 rounded-full bg-card border border-border text-foreground font-body text-sm placeholder:text-muted-foreground/70 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
           />
-          <button className="px-7 py-3.5 bg-primary-foreground text-primary font-body text-xs font-bold tracking-[0.18em] uppercase rounded-full hover:bg-warm-white hover:-translate-y-0.5 shadow-warm transition-all">
+          <button className="px-7 py-3.5 bg-orange-gradient text-primary-foreground font-body text-xs font-bold tracking-[0.18em] uppercase rounded-full shadow-orange-glow hover:-translate-y-0.5 transition-all">
             Subscribe
           </button>
         </div>

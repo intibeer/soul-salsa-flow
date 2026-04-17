@@ -111,30 +111,76 @@ const About = () => (
       </div>
     </section>
 
+    {/* Creative Entrepreneurs Collective */}
+    <section className="py-24 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-card shadow-warm">
+          <div
+            className="absolute -top-32 -left-24 w-96 h-96 rounded-full opacity-30 blur-3xl pointer-events-none"
+            style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
+            aria-hidden="true"
+          />
+          <div className="relative grid md:grid-cols-[1fr_1.2fr] gap-0">
+            <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
+              <img
+                src="https://ugc.production.linktr.ee/2d0a4fcc-6d4d-4961-901d-1d26523abf94_69af39bbbfc81f1fe426cefa.png?io=true&size=thumbnail-stack_v1_0"
+                alt="Renaissance Room Brighton"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-10 md:p-12 flex flex-col justify-center">
+              <span className="font-body text-[0.65rem] font-bold tracking-[0.22em] uppercase text-primary bg-warm-peach px-3 py-1 rounded-full self-start mb-4">
+                Creative Entrepreneurs Collective
+              </span>
+              <h3 className="font-display text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-4">
+                Renaissance Room <span className="italic">Brighton</span>
+              </h3>
+              <div className="h-[2px] w-10 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mb-5" />
+              <p className="font-body text-[1rem] text-muted-foreground leading-relaxed mb-7">
+                Beyond the dance floor, I co-host Renaissance Room — a
+                leadership space for creative entrepreneurs in Brighton. If
+                you're building something meaningful, come gather with us.
+              </p>
+              <CTAButton
+                to="https://sancti.co.uk/renaissance-room-8456"
+                external
+                variant="outline"
+              >
+                Learn More
+              </CTAButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {/* CTA */}
-    <section className="relative bg-orange-gradient py-24 px-6 text-center overflow-hidden">
+    <section className="relative py-24 px-6 text-center overflow-hidden bg-warm-gradient">
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
         aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 20% 30%, hsl(40 100% 85% / 0.5), transparent 55%), radial-gradient(ellipse at 80% 70%, hsl(20 90% 30% / 0.5), transparent 55%)",
-        }}
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-200)), transparent 70%)" }}
+      />
+      <div
+        className="absolute -bottom-32 -right-24 w-[28rem] h-[28rem] rounded-full opacity-40 blur-3xl pointer-events-none"
+        aria-hidden="true"
+        style={{ background: "radial-gradient(circle, hsl(var(--orange-300)), transparent 70%)" }}
       />
       <div className="relative container mx-auto max-w-2xl">
-        <span className="font-handwritten text-3xl text-primary-foreground/85 block mb-2">
+        <span className="font-handwritten text-3xl text-primary block mb-2">
           your next step
         </span>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary-foreground mb-4 tracking-tight">
-          Ready to Begin?
+        <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-4 tracking-tight">
+          Ready to <span className="italic text-primary">Begin?</span>
         </h2>
-        <div className="h-[2px] w-12 rounded-full bg-primary-foreground/60 mx-auto mb-6" />
-        <p className="font-body text-primary-foreground/85 mb-10 leading-relaxed">
+        <div className="h-[2px] w-12 rounded-full bg-gradient-to-r from-orange-600 to-orange-400 mx-auto mb-6" />
+        <p className="font-body text-muted-foreground mb-10 leading-relaxed">
           Join a class, attend an event, or book a free 30-minute breakthrough call.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton to="/classes" variant="light">View Classes</CTAButton>
-          <CTAButton to="/contact" variant="light">Get in Touch</CTAButton>
+          <CTAButton to="/classes" variant="primary">View Classes</CTAButton>
+          <CTAButton to="/contact" variant="outline">Get in Touch</CTAButton>
         </div>
       </div>
     </section>
