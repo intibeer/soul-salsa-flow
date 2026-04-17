@@ -19,8 +19,8 @@ export default {
         serifElegant: ['"Playfair Display"', '"Abril Fatface"', 'serif'],
         body: ['"Barlow"', '"Inter"', 'sans-serif'],
         sansRefined: ['"Inter"', '"Barlow"', 'sans-serif'],
-        handwritten: ['"Allura"', '"Sacramento"', 'cursive'],
-        script: ['"Allura"', '"Sacramento"', 'cursive'],
+        handwritten: ['"Sacramento"', 'cursive'],
+        script: ['"Sacramento"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

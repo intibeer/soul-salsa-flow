@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allura&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Sacramento&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -95,10 +95,10 @@
 }
 
 @layer utilities {
-  /* Script — signature Brittany-style (Allura as licence-free proxy) */
+  /* Script — Sacramento (original handwritten flourish) */
   .font-handwritten,
   .font-script {
-    font-family: 'Allura', 'Sacramento', cursive;
+    font-family: 'Sacramento', cursive;
     font-weight: 400;
   }
 
